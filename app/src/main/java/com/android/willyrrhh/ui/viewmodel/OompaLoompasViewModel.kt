@@ -12,8 +12,6 @@ class OompaLoompasViewModel (
     private val oompaLoompaRepository: OompaLoompaRepository,
     ) : BaseViewModel() {
 
-    private val _oompaLoompa: MutableLiveData<List<OompaLoompaPageItem>> = MutableLiveData(listOf())
-    val oompaLoompa: LiveData<List<OompaLoompaPageItem>> = _oompaLoompa
 
     private val _oompaLoompas: MutableLiveData<List<OompaLoompaPageItem>> = MutableLiveData(listOf())
     val oompaLoompas: LiveData<List<OompaLoompaPageItem>> = _oompaLoompas
@@ -22,42 +20,6 @@ class OompaLoompasViewModel (
     val loadedFilter: MutableLiveData<Boolean> = _loadedFilter
 
     private var oompaPage = 1
-
-
-    fun loadOompaLoompa(id: Int) {
-
-        viewModelScope.launch {
-            val result = runCatching {
-                val response =
-                oompaLoompaRepository.fetchOneOompaLoompa(id)
-
-                if (response != null) {
-                    _oompaLoompa.value = mutableListOf(
-                        OompaLoompaPageItem(
-                            id,
-                            response.first_name,
-                            response.last_name,
-                            response.height,
-                            response.country,
-                            response.age,
-                            response.email,
-                            response.profession,
-                            response.image,
-                            response.gender,
-                            response.favorite
-                        )
-                    )
-                }
-            }
-
-            val exception = result.exceptionOrNull()
-            if (exception != null && exception !is CancellationException) {
-                Timber.e(exception.message.toString())
-
-            }
-        }
-
-    }
 
 
     fun loadOompaLoompas() {
