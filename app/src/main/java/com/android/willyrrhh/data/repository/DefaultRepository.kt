@@ -7,5 +7,4 @@ interface DefaultRepository {
 
     suspend fun fetchAllOompaLoompas(page: Int): OompaLoompasPageResponse?
 
-    suspend fun fetchOneOompaLoompa(id: Int): OompaLoompa?
 }

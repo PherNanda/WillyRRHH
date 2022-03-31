@@ -46,7 +46,6 @@ class OompaLoompasFragment : Fragment() {
 
         binding.oompasInput.isEnabled = false
 
-        loadOompa(1)
         loadOompas()
 
         listAdapter =
@@ -155,10 +154,6 @@ class OompaLoompasFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    private fun loadOompa(id: Int){
-        viewModel.loadOompaLoompa(id)
     }
 
     private fun loadOompas(){
