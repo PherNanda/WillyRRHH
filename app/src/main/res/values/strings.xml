@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">WillyRRHH</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="oompas_fragment_label">Oompa Loompas</string>
+    <string name="second_fragment_label">volver atrás</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="gender">género</string>
+    <string name="email">Email</string>
+    <string name="favorites">favorites</string>
+    <string name="color">Color</string>
+    <string name="food">Comida</string>
+    <string name="song">Música</string>
+    <string name="random_string">random_string</string>
+    <string name="description">description</string>
+    <string name="height">altura</string>
+    <string name="age">edad</string>
+    <string name="id">id</string>
+    <string name="country">País</string>
+    <string name="filter_oompa">seleccionar búsqueda</string>
+    <string name="text">deseo buscar</string>
+    <string name="profession_menu">profesión</string>
+    <string name="gender_menu">género</string>
+    <string name="profession">Profesión</string>
+</resources>

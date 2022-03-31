@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.OompaLoompasFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/popMenuSearch"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        app:cardCornerRadius="30dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/teal_200"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="180dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/titleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_oompa"
+            android:paddingStart="10dp"
+            android:textAlignment="viewStart"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/oompasLayout"
+        style="@style/Widget.AppCompat.SearchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="1dp"
+        android:minWidth="250dp"
+        android:layout_marginHorizontal="20dp"
+        app:endIconMode="custom"
+        android:letterSpacing="0"
+        android:textAlignment="center"
+        app:boxCornerRadiusBottomEnd="30dp"
+        app:boxCornerRadiusTopEnd="30dp"
+        app:boxCornerRadiusBottomStart="30dp"
+        app:boxCornerRadiusTopStart="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/popMenuSearch"
+        app:layout_constraintEnd_toEndOf="@+id/popMenuSearch">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/oompasInput"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/text"
+            android:textAlignment="viewStart"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:inputType="text"
+            android:maxLength="20"
+            android:maxLines="1" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvOompas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="2dp"
+        tools:listitem="@layout/item_oompa_loompa"
+        tools:itemCount="10"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        android:background="@color/white"
+        android:layout_marginTop="130dp"
+        app:layout_constraintTop_toBottomOf="@id/oompasLayout"
+        app:layout_constraintBottom_toBottomOf="@+id/oompasLayout"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
